@@ -108,7 +108,110 @@ int main(int argc, char*argv[]){
 
     }
   
+else if(argv[1][0] == 'k'){
 
+
+if(argv[2][0] == 'U'){
+string teksti = argv[3];
+
+
+string result = "";
+cout << endl;
+
+for(int i=0 ; i<teksti.size() ; i++){
+
+    if(teksti[i] >= 'a' && teksti[i] <='z'){
+
+        result +=(char)(teksti[i] - 32);
+
+    }
+    else{
+
+        result +=teksti[i];
+
+    }
+
+}
+
+cout << "Uppercase: " << result;
+}
+else if(argv[2][0] == 'L'){
+
+
+string teksti1 = argv[3];
+
+
+
+string result1 = "";
+for(int i=0 ; i<teksti1.size(); i++){
+    if(teksti1[i]>='A' && teksti1[i]<='Z'){
+        result1 +=(char)(teksti1[i] + 32);
+
+    }
+    else{
+
+        result1+=teksti1[i];
+
+    }
+
+}
+cout << endl;
+
+cout << "Lowercase: " << result1 << endl;
+
+}
+else if(argv[2][0] =='I'){
+
+string teksti2 = argv[3];
+
+string result2 = "";
+for(int i=0; i<teksti2.size(); i++){
+
+    if(teksti2[i]>='a' && teksti2[i]<='z'){
+
+        result2 += (char)(teksti2[i] - 32);
+    }
+    else if(teksti2[i]>='A' && teksti2[i]<='Z'){
+
+        result2+=(char)(teksti2[i] + 32);
+
+    }
+    else {
+
+        result2 += teksti2[i];
+
+    }
+
+}
+
+cout << "Inverse: " << result2 << endl;
+
+}
+else if(argv[2][0]=='C'){
+
+string teksti3 = argv[3];
+
+
+teksti3[0] = toupper(teksti3[0]);
+
+   for (int i = 1; i < teksti3.size(); i++)
+   {
+        if ( teksti3[i - 1] == ' ' ){
+            teksti3[i] = toupper( teksti3[i] );
+        }
+        else{
+            teksti3[i] = tolower(teksti3[i]);
+        }
+   }
+   cout << "Capitalize: " << teksti3 << endl;
+   cout << endl << endl;
+}
+else {
+
+    cout << "Duhet te zgjedhni numra 1, 2, 3 ose 4 e jo tjere!";
+
+}
+}
 
 return 0;
 }
