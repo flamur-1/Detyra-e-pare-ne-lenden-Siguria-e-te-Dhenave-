@@ -1,5 +1,5 @@
 # Detyra-e-pare-ne-Siguria-e-te-Dhenave-
 
-<img src="Enkriptimi.jpg" width="600">
 
 
+<img src ="Capitalize.jpg" width="500">          
