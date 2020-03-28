@@ -6,4 +6,4 @@ Kjo eshte shembulli i capitalize
 
 
 
-<img src ="Capitalize.jpg" width="500">          
+<img src ="Images/Capitalize.jpg" width="500">          
