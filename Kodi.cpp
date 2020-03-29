@@ -151,7 +151,7 @@ int main(int argc, char*argv[]){
         cout << "Mesazhi i dekriptuar: " << decryptedText << endl;
 
     } else if(argv[2][0] == 'b'){
-        else if(argv[2][0] == 'b') {
+        
         int key = atoi(argv[3]);
 
 string text = argv[4];
@@ -159,11 +159,11 @@ string text = argv[4];
 
 
  encrypt(text,key);
-cout << "cipher text :- " << encrypt(text, key) << endl << endl;
+cout << "cipher text : " << encrypt(text, key) << endl << endl;
 
 decrypt(encrypt(text, key));
 
-    }
+    
 
         
     }
