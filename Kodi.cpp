@@ -300,6 +300,7 @@ else if(argv[1][0] == 't') {
         cout << "Gabim!" << endl;
     break;
     }
+}
     else {
     
     cout << "Zgjedhje e gabuar e argumentit te pare!";
