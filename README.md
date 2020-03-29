@@ -10,8 +10,12 @@ Mesazhi transmetohet me ane te "tap sounds", prej nga e ka marre edhe emrin. Tap
 
 
 
-
-
 Shembuj te ekzekutimit te seciles komande dhe nenkomande:
 <img src ="Images/Capitalize.jpg" width="500">          
+
+
+
+
+
+
 <img src= "Images/Inverse.jpg" width="500">
