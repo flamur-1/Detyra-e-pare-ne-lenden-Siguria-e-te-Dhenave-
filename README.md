@@ -22,17 +22,24 @@ Ne kryptografi, Ceasar Cipher, eshte nje nga teknikat me te thjeshta dhe shume t
  
  #
 Shembuj te ekzekutimit te seciles komande dhe nenkomande:
-Enkriptimi:
+
+   Enkriptimi:
+
 <img src="Images/Enkriptimi.jpg" width="500">
-Dekriptimi:
+   Dekriptimi:
+
 <img src="Images/Dekriptimi.jpg" width="500">
-Uppercase:
+   Uppercase:
+
 <img src = "Images/Uppercase.jpg" width="500">
-Lowercase:
+   Lowercase:
+
 <img src = "Images/lowercase.jpg" width="500">
-Inverse:
+   Inverse:
+
 <img src = "Images/Inverse.jpg" width="500">
-Capitalize:
+   Capitalize:
+
 <img src ="Images/Capitalize.jpg" width="500">          
 
  
