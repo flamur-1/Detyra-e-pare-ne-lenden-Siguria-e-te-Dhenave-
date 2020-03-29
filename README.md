@@ -8,8 +8,9 @@ Mesazhi transmetohet me ane te "tap sounds", prej nga e ka marre edhe emrin. Tap
 
 # Ceasar Cipher
 
-Ceasar Cipher eshte nje menyre e enkriptimit
-
+Ne kryptografi, Ceasar Cipher, eshte nje nga teknikat me te thjeshta dhe shume te njohura te enkriptimit. Eshte nje lloj i  substitution cipher, ku cdo shkronje zevendosohet me nje shkronje tjeter, duke u bazuar ne celesin qe i jepim. Psh: nese vendosim celesin 3 nga e majta, atehere shkronja D do te zevendesohej me shkronjen A.
+ #
+ #
 
 
 
