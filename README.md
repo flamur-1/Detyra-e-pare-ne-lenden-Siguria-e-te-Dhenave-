@@ -63,4 +63,6 @@ Dekodimi:
 
 <img src = "Images/Dekodimi.jpg" width="500">
 
- 
+ Brute-Force:
+
+<img src = "Images/Brute-Force.jpg" width="500">
