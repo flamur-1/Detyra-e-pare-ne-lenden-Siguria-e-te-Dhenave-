@@ -40,6 +40,12 @@ Shembuj te ekzekutimit te seciles komande dhe nenkomande:
 <img src = "Images/Inverse.jpg" width="500">
    Capitalize:
 
-<img src ="Images/Capitalize.jpg" width="500">          
+<img src ="Images/Capitalize.jpg" width="500"> 
+Enkodimi:
+
+<img src = "Images/Enkodimi.jpg" width="500">
+Dekodimi:
+
+<img src = "Images/Dekodimi.jpg" width="500">
 
  
