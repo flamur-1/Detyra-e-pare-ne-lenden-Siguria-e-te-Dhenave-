@@ -212,4 +212,94 @@ else {
 
 }
 }
+else if(argv[1][0] == 't') {
 
+    string arqin, arqout;
+    int ntaps, convert;
+
+       if(argc==6){
+        arqin = argv[2];
+        arqout = argv[3];
+        ntaps = atoi(argv[4]);
+        convert = atoi(argv[5]);
+       }
+
+    switch(argc)
+    {
+    case 6:
+        if(ntaps < 1) ntaps = 1;
+        if(convert == 2)
+        {
+            cout << "Decoding... Sheno tekstin: ";
+            char str;
+            int linha = 0;
+            int coluna = 0;
+            bool alt = false;
+            int prox = 0;
+            FILE *arqentrada = fopen(arqin.c_str(), "r");
+            FILE *arqexit = fopen(arqout.c_str(), "w");
+            if(arqentrada)
+            {
+                while(scanf("%c", &str) != EOF)
+                {
+                    if(str == '.'){
+                        if(alt == false)
+                            linha++;
+                        else
+                            coluna++;
+                    }
+                    else
+                    {
+                        if(alt == true) alt = false;
+                        else alt = true;
+                        prox++;
+                    }
+
+                    if(prox == 2)
+                    {
+                        linha /= ntaps;
+                        coluna /= ntaps;
+                        printf( "%c", tapcode[linha-1][coluna-1]);
+                        linha = coluna = prox = 0;
+                    }
+                }
+                printf("\n");
+            }
+            fclose(arqentrada);
+            fclose(arqexit);
+            cout << "OK!" << endl;
+        }
+        else
+        {
+            cout << "Coding... Sheno tekstin: ";
+            char caracter;
+            FILE *arqentrada = fopen(arqin.c_str(), "r");
+            FILE *arqexit = fopen(arqout.c_str(), "w");
+            if(arqentrada)
+            {
+                while(scanf( "%c", &caracter) != EOF)
+                {
+                    if(caracter != 'k')
+                        printf( "%s", convertfortap(caracter, ntaps).c_str());
+                    else
+                        printf("%s", convertfortap('c', ntaps).c_str());
+                }
+                printf( "\n");
+            }
+            fclose(arqentrada);
+            fclose(arqexit);
+            cout << "OK!" << endl;
+        }
+    break;
+    case 2:
+        cout << "HELP!" << endl;
+
+    break;
+
+    default:
+        cout << "Gabim!" << endl;
+    break;
+    }
+
+
+}
