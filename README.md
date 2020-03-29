@@ -1,7 +1,7 @@
 # Detyra-e-pare-ne-Siguria-e-te-Dhenave-
 
 
-Kjo eshte shembulli i capitalize
+Shembuj te ekzekutimit te programit per secilen komande dhe nenkomande:
 
 
 
