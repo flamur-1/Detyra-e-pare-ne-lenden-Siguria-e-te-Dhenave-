@@ -154,3 +154,130 @@ public static void main(String[] args) {
    		
     	   
        }
+ else if (choose.contains("ceasar")) {
+    	   
+    	  
+   		String choose1 = args[1];
+   		
+   		if(choose1.contains("enkriptimi")) {
+   			
+   			
+   			String plaintext = args[2];
+   			
+   			int key = Integer.parseInt(args[3]);
+   			
+   			System.out.println("Teksti i enkriptuar: " + Enkriptimi(plaintext, key));
+   			
+   		}
+   		else if(choose1.contains("dekriptimi")) {
+   			
+   			
+   			String ciphertext = args[2];
+   			
+   			int key = Integer.parseInt(args[3]);
+   			
+   			System.out.println("Teskti i dekriptuar: " + Dekriptimi(ciphertext, key));
+   			
+   			
+   		}
+   		
+   		
+    	   
+       }
+
+}
+public static String Enkriptimi(String plainText, int key) {
+	
+	String encryptedMessage = "";
+	
+	char ch;
+	Scanner sc = new Scanner(System.in);
+	
+
+	for(int i = 0; i < plainText.length(); ++i){
+		ch = plainText.charAt(i);
+		
+		if(ch >= 'a' && ch <= 'z'){
+            ch = (char)(ch + key);
+            
+            if(ch > 'z'){
+                ch = (char)(ch - 'z' + 'a' - 1);
+            }
+            
+            encryptedMessage += ch;
+        }
+        else if(ch >= 'A' && ch <= 'Z'){
+            ch = (char)(ch + key);
+            
+            if(ch > 'Z'){
+                ch = (char)(ch - 'Z' + 'A' - 1);
+            }
+            
+            encryptedMessage += ch;
+        }
+        else {
+        	encryptedMessage += ch;
+        }
+	}
+	
+	return encryptedMessage;
+	
+
+}
+
+public static String Dekriptimi(String cipherText, int key) {
+	
+	String decryptedMessage = "";
+	
+	char ch;
+	Scanner sc = new Scanner(System.in);
+	
+	
+	for(int i = 0; i < cipherText.length(); ++i){
+		ch = cipherText.charAt(i);
+		
+		if(ch >= 'a' && ch <= 'z'){
+            ch = (char)(ch - key);
+            
+            if(ch < 'a'){
+                ch = (char)(ch + 'z' - 'a' + 1);
+            }
+            
+            decryptedMessage += ch;
+        }
+        else if(ch >= 'A' && ch <= 'Z'){
+            ch = (char)(ch - key);
+            
+            if(ch < 'A'){
+                ch = (char)(ch + 'Z' - 'A' + 1);
+            }
+            
+            decryptedMessage += ch;
+        }
+        else {
+        	decryptedMessage += ch;
+        }
+	}
+	
+	return decryptedMessage;
+	
+	
+}
+public static String capitalizeString(String string) {
+	  char[] chars = string.toLowerCase().toCharArray();
+	  boolean found = false;
+	  for (int i = 0; i < chars.length; i++) {
+	    if (!found && Character.isLetter(chars[i])) {
+	      chars[i] = Character.toUpperCase(chars[i]);
+	      found = true;
+	    } else if (Character.isWhitespace(chars[i]) || chars[i]=='.' || chars[i]=='\'') { // You can add other chars here
+	      found = false;
+	    }
+	  }
+	  return String.valueOf(chars);
+	}
+
+
+}
+
+
