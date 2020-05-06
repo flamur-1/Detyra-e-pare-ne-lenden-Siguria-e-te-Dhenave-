@@ -68,7 +68,27 @@ Dekodimi:
 <img src = "Images/Brute-Force.jpg" width="500">
 
 
-#RSA Algoritmi(Algoritmet Asimetrike)
+# RSA Algoritmi(Algoritmet Asimetrike)
 
 
 
+RSA Algoritmi eshte nje algoritem qe perdoret ne kompjuteret modern per te enkriptuar dhe dekriptuar mesazhe. Eshte nje nje algoritem kryptografik asimetrik. Asimetrik domethene qe ka dy celesa te ndryshem. Ky algoritem eshte i quajtur edhe si public key kryptografi, sepse nje celes mund te jepet tek secili.
+
+Ne vijim mund te shihen rezultatet e kompajllimit te kodit, te seciles komande vec e vec, sipas kerkesave te kerkuara.
+
+
+Rezulatatet e Kompajllimit:
+
+
+<img src = "Images/CreateUser1.jpg" width="500">
+<img src = "Images/CreateUser2.jpg" width="500">
+<img src = "Images/ExportKey1.jpg" width="500">
+<img src = "Images/ExportKey2.jpg" width="500">
+<img src = "Images/ExportKey3.jpg" width="500">
+<img src = "Images/deleteUser1.jpg" width="500">
+<img src = "Images/deleteUser2.jpg" width="500">
+<img src = "Images/importKey1.jpg" width="500">
+<img src = "Images/importKey2.jpg" width="500">
+<img src = "Images/writeMessage1.jpg" width="500">
+<img src = "Images/writeMessage2.jpg" width="500">
+<img src = "Images/readMessage.jpg" width="500">
