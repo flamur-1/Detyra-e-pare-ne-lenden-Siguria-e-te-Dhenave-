@@ -1,4 +1,3 @@
-
 import java.security.KeyFactory;
 import java.security.PublicKey;
 import java.security.spec.X509EncodedKeySpec;
@@ -42,16 +41,19 @@ import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.io.*;
+
 public class RsaKey{
+	
 	private Cipher cipher;
+	
     public static void main(String[] args) throws Exception {
 	
     	 String paraqit = args[0];
     
     	if(paraqit.contains("create-user" )) {
 			
-    	
     	String user = args[1];
+		
           String ENCODED_PRIVATE_FILENAME =  user  + "EncodedPrivateKey.txt";
          String ENCODED_PUBLIC_FILENAME =  user + "EncodedPublicKey.txt";
           String XML_PRIVATE_FILENAME =  "RSA2/" + user + "XmlPrivateKey.xml";
@@ -84,7 +86,6 @@ public class RsaKey{
         writeFile(publicKeyAsXml, XML_PUBLIC_FILENAME);
         }
     	}
-		
 	
     	else if(paraqit.contains("export-key" )) {
 				
@@ -162,6 +163,7 @@ public class RsaKey{
 		
     }
     public static void sendMessage(String user, String message , PublicKey publicKey, PrivateKey privateKey) throws Exception {
+	    
         String ENCODED_PRIVATE_FILENAME =  user  + "EncodedPrivateKey.txt";
         String ENCODED_PUBLIC_FILENAME =  user + "EncodedPublicKey.txt";
         String XML_PRIVATE_FILENAME =  "RSA2/" + user + "XmlPrivateKey.xml";
@@ -191,12 +193,14 @@ public class RsaKey{
     }
     
     private static String decryptMessage(String encryptedText, PublicKey publicKey) throws Exception {
+	    
         Cipher cipher = Cipher.getInstance("RSA");
         cipher.init(Cipher.DECRYPT_MODE, publicKey);
         return new String(cipher.doFinal(Base64.getDecoder().decode(encryptedText)));
     }
     
     private static String encryptMessage(String plainText, PrivateKey privateKey) throws Exception {
+	    
         Cipher cipher = Cipher.getInstance("RSA");
         cipher.init(Cipher.ENCRYPT_MODE, privateKey);
         return Base64.getEncoder().encodeToString(cipher.doFinal(plainText.getBytes()));
@@ -222,6 +226,7 @@ public class RsaKey{
 		}
 	} 
 	public static String readFromFile(String user) {
+		
 		String oneLine = null;
 		String twoLine;
 		String fileName = "RSA2/" + user;
@@ -386,21 +391,19 @@ public class RsaKey{
 		String fileName = "RSA2/";
 		int counter = 0;
 		
-			File folder = new File("RSA2/");
-			File[] listOfFiles = folder.listFiles();
-			
-			for (File file : listOfFiles) {
-			    if (file.isFile()) {
-			    	
-			    	FileReader theFile = new FileReader(fileName+file.getName());
-					FileReader the = new FileReader(fileName+file.getName());
-					BufferedReader fileIn = new BufferedReader(theFile);
-					BufferedReader fileIn1 = new BufferedReader(the);
-					oneLine = fileIn.readLine();
-					if(oneLine.contains(mesazhi)) {
+		File folder = new File("RSA2/");
+		File[] listOfFiles = folder.listFiles();
+		
+		for (File file : listOfFiles) {
+		    if (file.isFile()) {			    	
+		   FileReader theFile = new FileReader(fileName+file.getName());
+                      	FileReader the = new FileReader(fileName+file.getName());
+			BufferedReader fileIn = new BufferedReader(theFile);
+			BufferedReader fileIn1 = new BufferedReader(the);
+			oneLine = fileIn.readLine();
+				if(oneLine.contains(mesazhi)) {
 						System.out.println( "Marresi: "  + file.getName());
-					}
-						
+					}		
 			    }
 			}
 		
