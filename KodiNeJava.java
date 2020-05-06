@@ -45,16 +45,9 @@ import java.io.*;
 public class RsaKey{
 	private Cipher cipher;
     public static void main(String[] args) throws Exception {
-		
-		
-		
-		
-    	
-    	
+	
     	 String paraqit = args[0];
     
-		
-		
     	if(paraqit.contains("create-user" )) {
 			
     	
@@ -92,13 +85,11 @@ public class RsaKey{
         }
     	}
 		
-		
-		
+	
     	else if(paraqit.contains("export-key" )) {
-			
-			
-    		
+				
         	String user = args[1];
+		
               String ENCODED_PRIVATE_FILENAME =  user  + "EncodedPrivateKey.txt";
               String ENCODED_PUBLIC_FILENAME =  user + "EncodedPublicKey.txt";
               String XML_PRIVATE_FILENAME =  "RSA2/" + user + "XmlPrivateKey.xml";
@@ -128,9 +119,7 @@ public class RsaKey{
             else {
             	System.out.println("Nuk ekziston nje celes i tille!");
             }
-			
-			
-			
+				
 			
     	}
     	else if(paraqit.contains("delete-user" )) {
@@ -138,7 +127,6 @@ public class RsaKey{
 			String user = args[1];
     		 DeleteUser(user);
     	}
-		
 		
 		
     	else if(paraqit.contains("write-message" )) {
@@ -160,8 +148,7 @@ public class RsaKey{
 			Map<String, Object> keys = getRSAKeys();
 			PrivateKey privateKey = (PrivateKey) keys.get("private");
 			PublicKey publicKey = (PublicKey) keys.get("public");
-			
-			
+				
 		}
 		else if(paraqit.contains("import-key")){
 			
@@ -169,10 +156,8 @@ public class RsaKey{
     		
     		ImportPrivate(sheno);
 			
-			
-			
+					
 		}
-		
 		
 		
     }
@@ -286,20 +271,24 @@ public class RsaKey{
         return keyPair;
     }
     static KeyPair createKeyPair1(int keyLength) throws NoSuchAlgorithmException {
+	    
         KeyPairGenerator keygen1 = KeyPairGenerator.getInstance("RSA");
         keygen1.initialize(keyLength, new SecureRandom());
         KeyPair keyPair1 = keygen1.generateKeyPair();
         return keyPair1;
     }
     static String getPrivateKeyAsEncoded(PrivateKey privateKey){
+	    
         byte[] privateKeyEncodedBytes = privateKey.getEncoded();
         return getBase64(privateKeyEncodedBytes);
     }
     static String getPublicKeyAsEncoded(PublicKey publicKey){
+	    
         byte[] publicKeyEncoded = publicKey.getEncoded();
         return getBase64(publicKeyEncoded);
     }
     static String getPrivateKeyAsXml(PrivateKey privateKey) throws Exception{
+	    
         KeyFactory keyFactory = KeyFactory.getInstance("RSA");
         RSAPrivateCrtKeySpec spec = keyFactory.getKeySpec(privateKey, RSAPrivateCrtKeySpec.class);
         StringBuilder sb = new StringBuilder();
@@ -316,6 +305,7 @@ public class RsaKey{
         return sb.toString();
     }
     static String getPublicKeyAsXml(PublicKey publicKey) throws Exception{
+	    
         KeyFactory keyFactory = KeyFactory.getInstance("RSA");
         RSAPublicKeySpec spec = keyFactory.getKeySpec(publicKey, RSAPublicKeySpec.class);
         StringBuilder sb = new StringBuilder();
@@ -326,11 +316,13 @@ public class RsaKey{
         return sb.toString();
     }
     static String getElement(String name, BigInteger bigInt) throws Exception {
+	    
         byte[] bytesFromBigInt = getBytesFromBigInt(bigInt);
         String elementContent = getBase64(bytesFromBigInt);
         return String.format("  <%s>%s</%s>%s", name, elementContent, name, NL);
     }
     static byte[] getBytesFromBigInt(BigInteger bigInt){
+	    
         byte[] bytes = bigInt.toByteArray();
         int length = bytes.length;
         if(length % 2 != 0 && bytes[0] == 0) {
@@ -339,19 +331,23 @@ public class RsaKey{
         return bytes;
     }
     static String getBase64(byte[] bytes){
+	    
         return Base64.getEncoder().encodeToString(bytes);
     }
     static void writeFile(String text, String filename) throws Exception{
+	    
         try(PrintWriter writer = new PrintWriter(filename)){
             writer.write(text);
         }
     }
     static void writeFile1(String plainText, String filename) throws Exception {
+	    
     	try(PrintWriter writer = new PrintWriter(filename)){
     		writer.write(plainText);
     	}
     }
     static void print(String line){
+	    
         System.out.println(line);
     }
     static void DeleteUser(String user) {
@@ -372,6 +368,7 @@ public class RsaKey{
         }
     }
     private static Map<String,Object> getRSAKeys() throws Exception {
+	    
         KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
         keyPairGenerator.initialize(2048);
         KeyPair keyPair = keyPairGenerator.generateKeyPair();
@@ -383,6 +380,7 @@ public class RsaKey{
         return keys;
     }
 	public static void readFromAllFiles(String mesazhi) throws IOException {
+		
 		String oneLine = null;
 		String twoLine;
 		String fileName = "RSA2/";
