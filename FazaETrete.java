@@ -700,6 +700,25 @@ public class RsaKey{
 					
 					pw.println(username + "," + password);
 					
+					
+			FileWriter fw = new FileWriter(tempFile, true);
+			BufferedWriter bw = new BufferedWriter(fw);
+			PrintWriter pw = new PrintWriter(bw);
+			x = new Scanner(new File(filepath));
+			x.useDelimiter("[,\n]");
+			
+			
+			while(x.hasNext()) {
+				
+				
+				username = x.next();
+				password = x.next();
+				
+				if(!username.equals(removeTerm)){
+					
+					
+					pw.println(username + "," + password);
+					
 				}
 				
 				
