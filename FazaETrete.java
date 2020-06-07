@@ -687,8 +687,10 @@ public class RsaKey{
 			PrintWriter pw = new PrintWriter(bw);
 			x = new Scanner(new File(filepath));
 			x.useDelimiter("[,\n]");
-			
-			
+			--
+			FileWriter fw = new FileWriter(tempFile,true);
+			BufferedWriter bw = new BufferedWriter(fw);
+			--
 			while(x.hasNext()) {
 				
 				
